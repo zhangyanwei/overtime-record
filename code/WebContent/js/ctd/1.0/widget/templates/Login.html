@@ -1,0 +1,17 @@
+<div class="widgetLoginContainer">
+    <h1>可怜的人，又加班了！</h1>
+    <form action="usr/login" method="get" class="widgetLogin">
+      <div class="widgetFormItem">
+        <label>邮箱名:</label>
+        <input required="true" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-props="regExp:'[^@]+@neusoft\\.com', invalidMessage:'只能输入东软的邮箱！'" name="usrMail" type="text">
+      </div>
+      <div class="widgetFormItem">
+        <label>密码:</label>
+        <input required="true" data-dojo-type="dijit/form/TextBox" name="usrPwd" type="password">
+      </div>
+      <div class="widgetFormItem">
+        <a href="#" data-dojo-attach-event="onclick:_registerClick">新来的？</a>
+        <button data-dojo-id="commit" data-dojo-type="dijit/form/Button" type="button">登录</button>
+      </div>
+    </form>
+</div>

@@ -1,0 +1,96 @@
+<div class="recordAddDialog">
+  <div>
+    <table>
+        <tr>
+          <td><label for="projectid">项目编号: </label></td>
+          <td><label name="projectid"></label></td>
+        </tr>
+        <tr>
+          <td><label for="projectname">项目名称: </label></td>
+          <td><label name="projectname"></label></td>
+        </tr>
+        <tr>
+          <td><label for="workDate">加班日期: </label></td>
+          <td><input data-dojo-type="dijit/form/DateTextBox" data-dojo-id="workDate" data-dojo-props="constraints:{datePattern:'yyyy-MM-dd'}" required="true" type="text" name="workDate"></td>
+        </tr>
+    </table>
+    <div>
+      <div class="recordGroupHeader">
+        <label class="groupTitle">加班计划</label>
+        <input data-dojo-id="planAvailable" data-dojo-type="dijit/form/CheckBox" checked="true"/>
+      </div>
+      <table class="planRecordTable">
+        <tr>
+          <td><label>时间段: </label></td>
+          <td>
+            <input data-dojo-type="dijit/form/TimeTextBox" data-dojo-id="planBeginTime" data-dojo-props="constraints:{timePattern:'HH\:mm'}" required="true" type="text" name="planBeginTime">
+            ~
+            <input data-dojo-type="dijit/form/TimeTextBox" data-dojo-id="planEndTime" data-dojo-props="constraints:{timePattern:'HH\:mm'}" required="true" type="text" name="planEndTime">
+          </td>
+        </tr>
+        <tr>
+          <td><label for="holiday">串休: </label></td>
+          <td>
+            <input name="holiday" data-dojo-id="holiday" data-dojo-type="dijit/form/CheckBox" checked="true"/>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="taxi">打车报销: </label></td>
+          <td>
+            <input name="taxi" data-dojo-id="taxi" data-dojo-type="dijit/form/CheckBox" checked="true"/>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="applied">是否已经申请: </label></td>
+          <td><label name="applied">否</label></td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <div class="recordGroupHeader">
+        <label class="groupTitle">实际加班</label>
+        <input data-dojo-id="actualAvailable" data-dojo-type="dijit/form/CheckBox" value="true" checked="true"/>
+      </div>
+      <table class="actualRecordTable">
+        <tr>
+          <td><label>时间段: </label></td>
+          <td colspan="3">
+            <input data-dojo-type="dijit/form/TimeTextBox" data-dojo-id="actualBeginTime" data-dojo-props="constraints:{timePattern:'HH\:mm'}" required="true" type="text" name="actualBeginTime">
+            ~
+            <input data-dojo-type="dijit/form/TimeTextBox" data-dojo-id="actualEndTime" data-dojo-props="constraints:{timePattern:'HH\:mm'}" required="true" type="text" name="actualEndTime">
+          </td>
+        </tr>
+        <tr>
+          <td><label for="taxiStartLocation">打车起点: </label></td>
+          <td>
+            <input data-dojo-type="dijit/form/ValidationTextBox" data-dojo-id="taxiStartLocation" type="text" name="taxiStartLocation">
+          </td>
+          <td>
+            <label for="taxiTimeBegin">上车时间: </label>
+          </td>
+          <td>
+            <input data-dojo-type="dijit/form/TimeTextBox" data-dojo-id="taxiTimeBegin" data-dojo-props="constraints:{timePattern:'HH\:mm'}" type="text" name="taxiTimeBegin">
+          </td>
+        </tr>
+        <tr>
+          <td><label for="taxiEndLocation">打车终点: </label></td>
+          <td>
+            <input data-dojo-type="dijit/form/ValidationTextBox" data-dojo-id="taxiEndLocation" type="text" name="taxiEndLocation">
+          </td>
+          <td>
+            <label for="taxiTimeEnd">下车时间: </label>
+          </td>
+          <td>
+            <input data-dojo-type="dijit/form/TimeTextBox" data-dojo-id="taxiTimeEnd" data-dojo-props="constraints:{timePattern:'HH\:mm'}" rtype="text" name="taxiTimeEnd">
+          </td>
+        </tr>
+        <tr>
+          <td><label for="taxiTicket">车票金额: </label></td>
+          <td>
+            <input data-dojo-type="dijit/form/ValidationTextBox" data-dojo-id="taxiTicket" data-dojo-props="regExp:'\\d+(\\.\\d+{1, 2})*'" type="text" name="taxiTicket">
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

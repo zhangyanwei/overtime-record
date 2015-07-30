@@ -1,0 +1,32 @@
+.msgBoxError {
+	background:url(../icons/error_32x32.png) no-repeat scroll 0 0 transparent;
+	min-height: 40px;
+}
+
+.msgBoxSuccess {
+	background:url(../icons/round_ok_32x32.png) no-repeat scroll 0 0 transparent;
+	min-height: 40px;
+}
+
+.msgBoxWarning {
+	background:url(../icons/warning_32x32.png) no-repeat scroll 0 0 transparent;
+	min-height: 40px;
+}
+
+.msgBoxConfirm {
+	background:url(../icons/warning_32x32.png) no-repeat scroll 0 0 transparent;
+	min-height: 40px;
+}
+
+.msgBoxInfo {
+	background:url(../icons/info_32x32.png) no-repeat scroll 0 0 transparent;
+	min-height: 40px;
+}
+
+.msgBoxError #content,
+.msgBoxSuccess #content,
+.msgBoxWarning #content,
+.msgBoxConfirm #content,
+.msgBoxInfo #content{
+	padding-left: 50px;
+}

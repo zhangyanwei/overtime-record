@@ -1,0 +1,31 @@
+<div class="widgetSettingContainer">
+  <div class="projView">
+    <div class="tableViewHeader">
+      <label class="tableTitle">项目列表</label>
+      <div class="projController">
+        <button data-dojo-id="addProj" data-dojo-type="dijit/form/Button" type="button">添加项目</button>
+        <button data-dojo-id="delProj" data-dojo-type="dijit/form/Button" disabled="disabled" type="button">删除项目</button>
+        <button data-dojo-id="modifyProj" data-dojo-type="dijit/form/Button" disabled="disabled" type="button">编辑项目</button>
+      </div>
+    </div>
+    <div class="projTableWrapper">
+      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="display dataTable" id="projTable">
+        <thead>
+          <tr>
+            <th>项目编号</th>
+            <th>项目名</th>
+            <th>项目启动日期</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+  <div class="settingTab">
+    <div>
+      <label class="settingTabItem" data-dojo-attach-point="memberManageItem">人员管理</label>
+      <label class="settingTabItem" data-dojo-attach-point="taskManageItem">申请计划</label>
+      <!--label class="manageNavItem" data-dojo-attach-point="taskManageItem">加班计划</label-->
+    </div>
+    <div class="settingTabContent" data-dojo-attach-point="settingTabContent"></div>
+  </div>
+</div>

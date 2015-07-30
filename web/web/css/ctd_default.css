@@ -1,0 +1,468 @@
+@charset "utf-8";
+
+/*@import url("../jslib/dojo/dojo/resources/dojo.css");*/
+@import url("../jslib/dojo/dijit/themes/nihilo/nihilo.css");
+@import url("../jslib/dojo/dojox/grid/resources/nihiloGrid.css");
+@import url("../jslib/jquery/plugins/dataTables/css/demo_page.css");
+@import url("../jslib/jquery/plugins/dataTables/css/demo_table.css");
+@import url("../jslib/ctd/widget/css/nihilo.css");
+
+/* Override dojo style */
+body {
+	margin:0px;
+	font-size: 13px;
+}
+
+.dijitTextBox {
+	width: 15em;
+}
+
+.dijitTimeTextBox {
+	width: 6.6em;
+}
+
+.dijitTimePickerTick {
+	color: silver !important;
+}
+
+.dijitTimePickerTick .dijitTimePickerItemInner {
+	font-size: 1em;
+}
+
+.dijitButton .dijitButtonNode {
+	border-color: #666;
+	padding: 0em;
+}
+
+.dijitButton .dijitButtonNode .dijitButtonContents {
+	min-width: 5em;
+}
+
+.dijitButton .dijitButtonNode .dijitButtonContents,
+.dijitComboBox .dijitArrowButtonInner,
+.dijitValidationTextBox .dijitValidationInner,
+.dijitTextBox .dijitInputInner,
+.dijitValidationTextBoxError input.dijitValidationInner,
+.dijitTextBox input.dijitArrowButtonInner
+ {
+	height: 1.6em !important;
+	line-height: 1.6em !important;
+}
+
+.dijitToggleButton,
+.dijitButton,
+.dijitDropDownButton,
+.dijitComboButton {
+	margin: 0em;
+}
+
+.dijitDialogPaneActionBar {
+	text-align: right;
+}
+
+/* Main view */
+.ctdMain {
+
+}
+
+/* Common */
+.widgetFormItem {
+	margin: 0.5em;
+	/*background-color: #FF6;*/
+	text-align:right;
+}
+
+/* Common */
+.widgetFormItem a {
+	vertical-align: middle;
+}
+
+/* Header */
+.widgetHeaderContainer {
+	width:auto;
+	height:50px;
+	border-bottom-width: thin;
+	border-bottom-style: solid;
+	border-bottom-color: #000;
+}
+.widgetHeaderContainer .logo {
+	padding-left:10px;
+}
+.widgetHeaderContainer .logo h1 {
+	line-height:50px;
+	display:inline;
+}
+
+.widgetHeaderContainer .usrInfo {
+	display: inline-block;
+	position: absolute;
+	right: 12px;
+	font-size: 12px;
+	top: 4px;
+}
+
+.widgetHeaderContainer .globalNavi {
+	margin-top: 6px;
+	text-align: right;
+}
+
+.widgetHeaderContainer #globalNaviAdmin {
+	line-height: 1.5em;
+	width: 15em;
+	display: inline-block;
+}
+
+.widgetHeaderContainer #globalNaviAdmin:hover {
+	background-color: rgb(255, 235, 190);
+	line-height: 1.48em;
+	width: 14.6em;
+	display: inline-block;
+	border: 1px solid rgb(202, 195, 14);
+}
+
+/* Bottom */
+.widgetBottomContainer {
+	height: 50px;
+	vertical-align: middle;
+	width: auto;
+	border-top-width: thin;
+	border-top-style: solid;
+	border-top-color: #000;
+	text-align: right;
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+}
+.widgetBottomContainer .info {
+	line-height: 50px;
+}
+
+/* Attendance Widget */
+.widgetAttendanceContainer {
+	position: absolute;
+	top: 51px;
+	bottom: 0px;
+	width: 100%;
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+.widgetAttendanceContainer .dijitInline {
+	display: inline-block !important;
+}
+
+.widgetAttendanceContainer .attendanceSetting,
+.widgetAttendanceContainer .attendanceContent {
+	margin: auto;
+	width: 500px;
+
+	border: 1px solid gray;
+	padding: 10px;
+	text-align: center;
+	/*-webkit-border-radius: 6px;*/
+	/*-moz-border-radius: 6px;*/
+	/*border-radius: 6px;*/
+	-webkit-box-shadow: 1px 1px 17px #808080;
+	-moz-box-shadow: 1px 1px 17px #808080;
+	box-shadow: 1px 1px 17px #808080;
+	background-color: white;
+	behavior: url("./pie/PIE.htc");
+}
+
+.widgetAttendanceContainer .attendanceSetting {
+	text-align: left;
+	margin-top: 50px;
+}
+
+.widgetAttendanceContainer .attendanceSetting span {
+	display: inline-block;
+	width: 12em;
+}
+
+.widgetAttendanceContainer .attendanceContent {
+	text-align: center;
+	margin-top: 30px;
+}
+
+.widgetAttendanceContainer #timeSpan {
+	font-size: 42px;
+}
+
+.widgetAttendanceContainer .attendanceRecord {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;  
+	border: 1px solid #A79620;
+	background-color: #EEE8AA;
+	font-family: Verdana, Geneva, sans-serif;        
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 6px;
+}
+
+.widgetAttendanceContainer .attendanceRecordItem label {
+	width: 10em;
+	display: inline-block;
+	text-align: right;
+}
+
+.widgetAttendanceContainer .attendanceRecordItem #firstPunch,
+.widgetAttendanceContainer .attendanceRecordItem #lastPunch {
+	color: red;
+}
+
+.widgetAttendanceContainer .dijitButton .dijitButtonNode,
+.widgetAttendanceContainer .dijitButtonContents {
+	border-color: #666;
+	min-width: 6em;
+	line-height: 1.5em;
+	font-size: 18px;
+}
+
+.widgetAttendanceContainer .attendanceNotice {
+	width: 500px;
+	margin: auto;
+	top: 30px;
+	position: relative;
+	padding: 10px;
+}
+
+.widgetAttendanceContainer .attendanceNotice:hover {
+	background: mistyrose;
+	color: crimson;
+}
+
+/* Login Widget */
+.widgetLoginContainer {
+	width: 25em;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 24px;
+}
+.widgetLoginContainer h1 {
+	text-align: right;
+	margin-top: 18px;
+	margin-bottom: 32px;
+}
+
+/* Register Widget */
+.widgetRegisterContainer {
+	width: 30em;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 24px;
+}
+.widgetRegisterContainer h1 {
+	text-align:right;
+}
+
+/* CTD View Widget */
+.widgetCTDViewContainer {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.widgetCTDViewContainer .gridView {
+	margin-top: 6px;
+}
+
+.widgetCTDViewContainer .ctdViewControl {
+	margin-top: 0.5em;
+}
+
+.widgetCTDViewContainer .ctdViewControl .dijitComboBox {
+	position: relative;
+	top: -1px;
+	width: 10em;
+}
+
+.widgetCTDViewContainer .ctdViewOperate {
+	display: inline-block;
+}
+
+.widgetCTDViewContainer .ctdViewProj,
+.widgetCTDViewContainer .ctdViewMember {
+	display: inline-block;
+	margin-right: 12px;
+	/*float: right;*/
+}
+
+.widgetCTDViewContainer .ctdViewProj #projButton {
+	display: inline-block;
+}
+
+.widgetCTDViewContainer table {
+	border: 1px solid gray;
+}
+
+.widgetCTDViewContainer .dataTables_filter {
+	text-align: right;
+	width: auto;
+	top: -2px;
+	position: relative;
+}
+
+.widgetCTDViewContainer .dataTables_info {
+	clear: both;
+}
+
+/* Dialog Widget */
+.widgetDialogPaneContentArea .recordAddDialog {
+	/*width: 510px;*/
+}
+
+.widgetDialogPaneContentArea .recordAddDialog .dijitTabContainer {
+	width: 100%; 
+	margin-bottom: 12px;
+}
+
+.widgetDialogPaneContentArea .recordAddDialog .recordGroupHeader {
+	border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;  
+	border: 1px solid #C0C0C0;
+	background-color: #F7F7F7;
+	padding: 3px;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+
+.widgetDialogPaneContentArea .recordAddDialog .recordGroupHeader .dijitCheckBox {
+	float: right;
+	margin-top: 6px;
+}
+
+.widgetDialogPaneContentArea .recordAddDialog .groupTitle {
+	line-height: 27px;
+	font-weight: bold;
+}
+
+.widgetDialogPaneContentArea .recordAddDialog table {
+	width: 100%;
+}
+
+/* Manage View Widget*/
+.widgetManageContainer {
+	margin: 6px;
+}
+
+.widgetManageContainer .subManage {
+	position: absolute;
+	bottom: 6px;
+	top: 96px;
+	left: 10px;
+	right: 10px;
+}
+
+.widgetManageContainer .tableViewHeader {
+	border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;  
+	border: 1px solid #C0C0C0;
+	background-color: #F7F7F7;
+	padding: 3px;
+}
+
+.widgetManageContainer .tableTitle {
+	line-height: 27px;
+	font-weight: bold;
+}
+
+.widgetSettingContainer .projView {
+	display: inline-block;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 50%;
+	bottom: 0px;
+}
+
+.widgetSettingContainer .settingTab {
+	display: inline-block;
+	position: absolute;
+	left: 51%;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+}
+
+.widgetSettingContainer .settingTabContent {
+	position: absolute;
+	bottom: 0px;
+	top: 31px;
+	left: 0px;
+	right: 0px;
+}
+
+.widgetSettingContainer .projTableWrapper {
+	position: absolute;
+	width: 100%;
+	bottom: 0px;
+	top: 39px;
+}
+
+.memberView {
+	height: 100%;
+}
+
+.widgetSettingContainer .memberTableWrapper {
+	position: absolute;
+	width: 100%;
+	bottom: 0px;
+	top: 31px;
+}
+
+.widgetSettingContainer .dataTables_wrapper {
+	border: 1px solid gray;
+	height: 100%;
+}
+
+.widgetSettingContainer .dataTables_scroll {
+	height: 100%;
+}
+
+.widgetSettingContainer .dataTables_scrollBody {
+	position: absolute;
+	top: 22px;
+	bottom: 0px;
+}
+
+.widgetSettingContainer .projController,
+.widgetSettingContainer .memberController {
+	display: inline-block;
+	float: right;
+	line-height: 24px;
+}
+
+.widgetManageContainer .manageNavItem,
+.widgetSettingContainer .settingTabItem {
+	display: inline-block;
+	line-height: 1.5em;
+	padding: 7px;
+}
+
+.widgetManageContainer .manageNavItem:hover,
+.widgetSettingContainer .settingTabItem:hover {
+	line-height: 1.5em;
+	display: inline-block;
+	padding: 6px;
+	border: 1px solid rgb(189, 199, 177);
+}
+
+.widgetManageContainer .manageNavItem:active,
+.widgetSettingContainer .settingTabItem:active {
+	line-height: 1.5em;
+	display: inline-block;
+	padding: 6px;
+	border: 1px solid #9E9E9E;
+	background-color: rgb(246, 248, 242);
+}
+
+.widgetManageContainer .manageNavItemSelected,
+.widgetSettingContainer .settingTabItemSelected {
+	padding: 6px;
+	border: 1px solid rgb(189, 199, 177);
+	background-color: #E4F8DA;
+}
+
+

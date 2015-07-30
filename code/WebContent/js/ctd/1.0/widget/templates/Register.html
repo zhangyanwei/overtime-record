@@ -1,0 +1,29 @@
+<div class="widgetRegisterContainer">
+  <h1>请用户需要填写下面的信息。</h1>
+  <form action="usr/register" method="get" name="usrRegister">
+  	<div class="widgetFormItem">
+      <label>邮箱名:</label>
+      <input required="true" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-props="regExp:'[^@]+@neusoft\\.com', invalidMessage:'只能输入东软的邮箱！'" name="usrMail" type="text">
+    </div>
+    <div class="widgetFormItem">
+      <label>密码:</label>
+      <input data-dojo-id="pwdTextBox" required="true" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-props="regExp:'.{6,}', invalidMessage:'密码不能少于6位。'" name="usrPwd" type="password">
+    </div>
+    <div class="widgetFormItem">
+      <label>再次输入密码:</label>
+      <input data-dojo-id="pwdAgainTextBox" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-props="isValid:${_isValidPwd}" name="usrPwdAgain" type="password"></input>
+    </div>
+    <div class="widgetFormItem">
+      <label>姓名:</label>
+      <input required="true" data-dojo-attach-point="usrNameTextBox" data-dojo-type="dijit/form/ValidationTextBox" name="usrName" type="text"></input>
+    </div>
+    <div class="widgetFormItem">
+      <label>员工卡号:</label>
+      <input required="true" data-dojo-attach-point="usrEmployeeIDTextBox" data-dojo-type="dijit/form/ValidationTextBox" name="usrEmployeeID" type="text"></input>
+    </div>
+    <div class="widgetFormItem">
+      <a href="#" data-dojo-attach-event="onclick:_backLoginClick">返回登录？</a>
+      <button data-dojo-type="dijit/form/Button" type="button">注册</button>
+    </div>
+  </form>
+</div>

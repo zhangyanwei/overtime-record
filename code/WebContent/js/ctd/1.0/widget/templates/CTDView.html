@@ -1,0 +1,46 @@
+<div class="widgetCTDViewContainer">
+  <div class="ctdViewControl">
+    <div class="ctdViewOperate">
+      <button data-dojo-id="addRecord" data-dojo-type="dijit/form/Button" disabled="disabled" type="button">添加...</button>
+      <button data-dojo-id="delRecord" data-dojo-type="dijit/form/Button" disabled="disabled" type="button">删除</button>
+      <button data-dojo-id="modifyRecord" data-dojo-type="dijit/form/Button" disabled="disabled" type="button">修改...</button>
+      <button data-dojo-id="downloadRecord" data-dojo-type="dijit/form/DropDownButton" disabled="disabled" type="button">
+        <span>导出加班记录</span>
+        <div data-dojo-type="dijit/Menu" style="display: none;">
+          <div data-dojo-id="downloadUserRecord" data-dojo-type="dijit/MenuItem">个人记录</div>
+          <div data-dojo-id="downloadProjectRecord" data-dojo-type="dijit/MenuItem">项目记录</div>
+        </div>
+      </button>
+    </div>
+    <div id="projFilter" class="ctdViewProj">
+      <span>项目名:</span>
+      <div id="projSelect"></div>
+    </div>
+    <div id="memberFilter" class="ctdViewMember">
+      <span>成员ID:</span>
+      <div id="memberSelect"></div>
+    </div>
+  </div>
+  <div class="gridView">
+    <table cellpadding="0" cellspacing="0" border="0" width="100%" class="display" id="gridView">
+      <thead>
+        <tr>
+          <th rowspan="2">日期</th>
+          <th colspan="2">计划</th>
+          <th colspan="2">实际</th>
+          <th rowspan="2">上车</th>
+          <th rowspan="2">下车</th>
+          <th rowspan="2">起点</th>
+          <th rowspan="2">终点</th>
+          <th rowspan="2">车票金额</th>
+        </tr>
+        <tr>
+          <th>时间段</th>
+          <th>加班时长</th>
+          <th>时间段</th>
+          <th>加班时长</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</div>

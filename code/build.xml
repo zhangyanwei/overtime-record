@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="Ant Task" default="deploy" basedir="." xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+  
+  <property file="./ant.properties"/>
+  
+  <property name="maven_settings" value="${maven_local_repository}\maven-setting.xml"/>
+  <typedef resource="org/apache/maven/artifact/ant/antlib.xml" uri="antlib:org.apache.maven.artifact.ant" classpath="${maven_ant_tasks_jar}"/>
+
+  <property name="src_java_dir" value="${basedir}\src\main\java"/>
+  <property name="src_res_dir" value="${basedir}\src\main\resources"/>
+  <property name="target_dir" value="${basedir}\WebContent" />
+  <property name="target_classes_dir" value="${target_dir}\WEB-INF\classes" />
+  <property name="target_lib_dir" value="${target_dir}\WEB-INF\lib"/>
+  <property name="target_jar_name" value="${target_lib_dir}\ctd.jar" />
+
+  <macrodef name="maven">
+    <attribute name="options" default="" />
+    <attribute name="goal" />
+    <attribute name="basedir" />
+    <attribute name="resultproperty" default="maven.result" />
+    <element name="args" implicit="true" optional="true" />
+    <sequential>
+      <java classname="org.codehaus.plexus.classworlds.launcher.Launcher" fork="true"
+        dir="@{basedir}" resultproperty="@{resultproperty}">
+        <jvmarg value="-Xmx512m"/>
+        <classpath>
+          <fileset dir="${maven_home}\boot">
+            <include name="*.jar" />
+          </fileset>
+          <fileset dir="${maven_home}\lib">
+            <include name="*.jar" />
+          </fileset>
+        </classpath>
+        <sysproperty key="classworlds.conf" value="${maven_home}\bin\m2.conf" />
+        <sysproperty key="maven.home" value="${maven_home}" />
+        <arg line="@{options} @{goal} " />
+        <args/>
+      </java>
+    </sequential>
+  </macrodef>
+
+  <target name="clean">
+    <echo>Clean target folder.</echo>
+    <delete dir="${target_classes_dir}" />
+  </target>
+
+  <target name="compileJava">
+    <mkdir dir="${target_classes_dir}" />
+    
+    <echo>Compile java files.</echo>
+    <artifact:dependencies filesetId="maven_deps_fileset" pathId="maven_deps_classes" useScope="compile" settingsFile="${maven_settings}">
+      <pom file="pom.xml"/>
+    </artifact:dependencies>
+    
+    <javac destdir="${target_classes_dir}" srcdir="${src_java_dir}" encoding="UTF-8" target="1.6">
+      <compilerarg value="-g:lines,vars,source" />
+      <compilerarg value="-Xlint:deprecation" />
+      <compilerarg value="-Xlint:unchecked" />
+            <classpath>
+                <fileset refid="maven_deps_fileset"/>
+                <fileset dir="${tomcat_home}\lib">
+                    <include name="*.jar" />
+                </fileset>
+            </classpath>
+    </javac>
+    
+    <copy overwrite="true" todir="${target_classes_dir}">
+      <fileset dir="${src_res_dir}" />
+      <fileset dir="${src_java_dir}">
+        <exclude name="**/*.java"/>
+      </fileset>
+    </copy>
+    
+  </target>
+
+  <target name="createJar">
+    <echo>Create jar file.</echo>
+    <jar jarfile="${target_jar_name}">
+      <fileset dir="${target_classes_dir}" />
+      <!-- define MANIFEST.MF -->
+      <manifest>
+        <attribute name="Build-No" value="${version.no}" />
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="webappCopy">
+
+    <echo>Copy java libs from libs folder.</echo>
+    <maven basedir="${basedir}" options="-s ${maven_settings}" goal="dependency:copy-dependencies">
+      <arg line="-DincludeScope=runtime"/>
+      <arg line="-DoutputDirectory=${target_lib_dir}"/>
+      <arg line="-Dtype=jar"/>
+    </maven>
+
+    <!--copy overwrite="true" file="${mw-jar}" todir="${target_lib_dir}" /-->
+
+  </target>
+
+  <target name="createWar">
+    <echo>Create war.</echo>
+    <war destfile="${deploy_dir}\${war_name}.war" basedir="${target_webapp_dir}" webxml="${target_webapp_dir}\WEB-INF\web.xml" />
+  </target>
+
+  <target name="deploy">
+    <antcall target="clean" />
+    <antcall target="compileJava" />
+    <!--antcall target="createJar" /-->
+    <antcall target="webappCopy" />
+    <!--antcall target="createWar" /-->
+  </target>
+
+</project>

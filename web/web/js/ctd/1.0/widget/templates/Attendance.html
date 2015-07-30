@@ -1,0 +1,34 @@
+<div class="widgetAttendanceContainer">
+  <div class="attendanceSetting">
+    <div>
+      <label>当前活动项目(点击可修改)：</label>
+      <span data-dojo-attach-point="projectSelectHolder">加载中...</span>
+    </div>
+  </div>
+  <div class="attendanceContent">
+    <div>
+      <span id="dateSpan">当前日期</span>
+    </div>
+    <div>
+      <span id="timeSpan">当前时间</span>
+    </div>
+    <div class="attendanceRecord">
+      <div class="attendanceRecordItem">
+        <label>第一次打卡时间：</label>
+        <span id="firstPunch"></span>
+      </div>
+      <div class="attendanceRecordItem">
+          <label>最后一次打卡时间：</label>
+          <span id="lastPunch"></span>
+      </div>
+    </div>
+    <div>
+      <button data-dojo-id="punch" data-dojo-type="dijit/form/Button" type="button">记一笔!</button>
+      <button data-dojo-id="close" data-dojo-type="dijit/form/Button" type="button">退出</button>
+    </div>
+  </div>
+
+  <div class="attendanceNotice" data-dojo-attach-point="recordNoticeHolder">
+    <label>要查看详细加班记录，请点击这里。</label>
+  </div>
+</div>

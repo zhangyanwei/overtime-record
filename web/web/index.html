@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="css/ctd_default.css" rel="stylesheet" type="text/css">
+<script src='js/djConfig.js'></script>
+<!--script src='jslib/dojo/dojo/dojo.js'></script-->
+<script src='js/dojo/1.8.3.SRC/dojo/dojo.js'></script>
+<title>加班记录管理系统</title>
+</head>
+<body class="nihilo">
+<script>
+
+require(["dojo/ready", "dojo/parser", "ctd/widget/Main", "dojo/_base/window"], function(ready, parser, Main, win){
+	ready(function(){
+		// Create a button programmatically:
+		var main = new Main({}, "main");
+		//main.startup();
+		main.placeAt(win.body());
+		main.startup();
+	});
+});
+</script>
+</body>
+</html>
